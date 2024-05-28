@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<head>
+    <title>TABLA DE IMAGENES</title>
+</head>
+ <h1> TABLA LOGOS</h1>
+    <table>
+        <tr>
+            <td> <img src="Imagenes/aple.png" class="manzana" alt="ligth switch" role="img" width="150" height="150" /></td>
+            <td> <img src="Imagenes/fanta.jpeg" class="fanta" alt="ligth switch" role="img" width="150" height="150" /></td>
+            <td> <img src="Imagenes/lego.webp" class="lego" alt="ligth switch" role="img" width="150" height="150" /></td>
+            <td> <img src="Imagenes/cocacola.png" class="cola" alt="ligth switch" role="img" width="150" height="150" /></td>
+        </tr>   
+    </table>
+    <a href="../INDEX.html"><button>ATRAS</button> </a>
+    <style>
+        body{
+            background-color: aqua;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        h1{
+            border-top: solid black;
+            border-right: solid black;
+            border-left: solid black;
+            padding: 10px;
+            margin: 0%;
+            border-top-left-radius: 10px ;
+            border-top-right-radius:10px ;
+            background-color: blue;
+        }
+        button{
+            display: flex;
+            width: 100px;
+            height: 30PX;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            color: black;
+            margin-top: 20px;
+        }
+        table{
+            display: flex;
+            border: solid black 3px;
+            padding: 5px;
+            background-color: blue;
+            border-radius: 5px;
+
+        }
+        tr{
+            display: flex;
+            flex-direction:row;
+            border:solid black;
+            border-radius: 5px;
+            background-color: white;
+            margin: 10px;
+        }
+        td{
+            display: flex;
+            margin: 20px;
+        }
+        img{
+            border: solid 1px;
+        }
+        .manzana:hover{
+            box-shadow: 0 0 12px 8px black;
+        }
+        .fanta:hover{
+            box-shadow: 0 0 12px 8px orange;
+            border: solid orange 1px;
+        }
+        .lego:hover{
+            border: solid red 1px;
+            box-shadow: 0 0 12px 8px red;
+        }
+        .cola:hover{
+            border: solid red 1px;
+            box-shadow: 0 0 12px 8px red;
+        }
+
+    </style>
+</html>

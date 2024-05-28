@@ -1,0 +1,50 @@
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Using the XMLHttpRequest Object</h2>
+
+<div id="demo">
+<button type="button" onclick="load()">BOTON</button>
+</div>
+
+
+<script>
+
+  function load(){
+    
+
+    let xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function() {
+
+      if (this.readyState == 4 && this.status == 200) {
+       myFunction(this);
+      }
+    };
+
+    xhttp.open("GET", "https://www.aemet.es/xml/municipios/localidad_46202.xml", true);
+    xhttp.send();
+
+}
+
+function myFunction(xml){
+   let etiqueta, poblacion, XMLDoc;
+
+   XMLDoc = xml.responseXML;
+
+   etiqueta = XMLDoc.getElementsByTagName("nombre");
+
+   poblacion = etiqueta[0].childNodes[0].nodeValue;
+
+   document.getElementById("demo").innerHTML=poblacion;
+}
+
+</script>
+
+</body>
+</html>

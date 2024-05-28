@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Cuenta vocales, espacios en blanco y total caracteres">
+        <title>Ejercicio javascript - ejemplo de uso de métodos</title>
+    </head>
+    <body>
+    
+    <script>
+
+        let Veces_a = Veces_e = Veces_i = Veces_o = Veces_u = Blancos = 0;
+        VectorLetras = ConsultarTexto();
+        console.log(VectorLetras)
+        
+        function ConsultarTexto(){
+            let PideTexto = window.prompt("escribe un texto cualquiera");
+            let TextoRoto = PideTexto.toLowerCase().split("");
+            return TextoRoto;
+        }        
+        
+        for(k=0;k < VectorLetras.length;k++){
+            
+            switch(VectorLetras[k]){
+                case "a":
+                case "à":
+                case "á":
+                    Veces_a++;
+                    break;
+                case "e":
+                case "é":
+                case "è":
+                    Veces_e++;
+                    break;
+                case "i":
+                case "í":
+                case "ì":
+                    Veces_i++;
+                    break;
+                case "o":
+                case "ó":
+                case "ò":
+                    Veces_o++;
+                    break;
+                case "u":
+                case "ú":
+                case "ù":
+                    Veces_u++;
+                    break;
+                case " ":
+                    Blancos++;
+            }
+        }
+        
+        TotalVocales = Veces_a + Veces_e + Veces_i + Veces_o + Veces_u;
+        
+        document.write("Hay " +  Veces_a + " vocales 'a'<br>");
+        document.write("Hay " +  Veces_e + " vocales 'e'<br>");
+        document.write("Hay " +  Veces_i + " vocales 'i'<br>");
+        document.write("Hay " +  Veces_o + " vocales 'o'<br>");
+        document.write("Hay " +  Veces_u + " vocales 'u'<br>");
+        
+        document.write("<br>");
+        document.write("Total de vocales: " + TotalVocales);
+        document.write("<br>");
+        document.write("Total de espacios en blanco: " + Blancos);
+        document.write("<br>");
+        document.write("Total de carácteres escritos: " + VectorLetras.length);
+        document.write("<br>");
+        document.write("Texto original: <b>" + VectorLetras.join("") + "</b>");
+    </script>
+
+    </body>
+</html>

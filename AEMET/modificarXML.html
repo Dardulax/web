@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <p id="demo"></p>
+
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                myFunction(this);
+            }
+        };
+        xhttp.open("GET", "http://jfajardo.ieslavereda.es/XMLDOM/datos.xml", true);
+        xhttp.send();
+
+        // +++++++++++++++   MODIFICAR UN NODO +++++++++++++++++++
+        function myFunction(xml) {
+            let xmlDoc = xml.responseXML;
+            let nuevoValor = "31.50";
+
+            //Modificamos el valor
+            nodoModificar = xmlDoc.getElementsByTagName("price")
+            nodoModificar[0].childNodes[0].nodeValue = nuevoValor
+
+            //Modificar atributo
+            nodoAttModificar = xmlDoc.getElementsByTagName("title")
+
+            nodoAttModificar[0].setAttribute("lang", "it")
+
+            console.log(nodoModificar)
+            console.log(nodoAttModificar)
+        }
+
+        // +++++++++++++++   BORRAR UN NODO +++++++++++++++++++++++
+        /*function myFunction(xml) {
+            let xmlDoc = xml.responseXML;            
+
+            //Modificamos el valor
+            listaNodos = xmlDoc.getElementsByTagName("book")
+            //console.log(listaNodos)
+
+            nodoBorrar = listaNodos[3]
+
+            xmlDoc.documentElement.removeChild(nodoBorrar)
+            console.log(listaNodos)           
+        }*/
+
+        // +++++++++++++++   BORRAR UN NODO +++++++++++++++++++++++
+
+        /*function myFunction(xml) {
+            let xmlDoc = xml.responseXML;            
+
+            //Creamos nodo
+            nuevoNodo = xmlDoc.createElement("Existencias")
+            nuevoTexto = xmlDoc.createTextNode("5")
+            nuevoNodo.appendChild(nuevoTexto)
+
+            listaNodos = xmlDoc.getElementsByTagName("book")
+
+            listaNodos[0].appendChild(nuevoNodo)
+
+            console.log(listaNodos)  
+            
+            //Creamos atributo
+            xmlDoc.getElementsByTagName('Existencias')[0].setAttribute('nuevas', 'si')
+
+        }*/
+
+    </script>
+</body>
+
+</html

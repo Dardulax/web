@@ -1,0 +1,19 @@
+body{
+    margin: 0%;
+    padding: 0%;
+}
+.portada{
+    border: solid red;
+    width: ;
+}
+.recuadro{
+    display: flex;
+    border: solid blue;
+    height: auto;
+    width: auto;
+}
+.recuadro img{
+    height: auto;
+    width: 500px;
+    position:static;
+}

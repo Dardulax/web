@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>DIAS DE PREDICCION</h1>
+    <button onclick="XMLDoc()">Start</button>
+    <div class="texto"></div>
+    <script>
+        function XMLDoc(){
+
+            let xhttp = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = function() {
+
+            if (this.readyState == 4 && this.status == 200) {
+             myFunction(this);
+            }
+            };
+
+            xhttp.open("GET", "https://www.aemet.es/xml/municipios/localidad_46202.xml", true);
+            xhttp.send();
+
+        }
+
+        function myFunction(xml){
+            var etiqueta, fecha, xmlDoc;
+
+            xmlDoc = xml.responseXML;
+
+            fecha="";
+            
+            etiqueta = XMLDoc.getElementsByTagName("productor")
+
+            if(i = 0; i < xmlDoc.length; i++){
+                fecha += etiqueta[i].childNodes[0].nodeValue + "</br>";
+
+            }
+            document.getElementsByClassName("texto").innerHTML = fecha;
+        }
+
+    </script>
+</body>
+</html>
